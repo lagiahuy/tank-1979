@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id = "@+id/ui_layout">
+
+    <ImageButton
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/pause"
+        android:id="@+id/pause"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/text_game_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_over"
+            android:fontFamily="@font/font"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textSize="45sp"/>
+        <TextView
+            android:id="@+id/text_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/win"
+            android:fontFamily="@font/font"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textSize="45sp"/>
+        <Button
+            android:id="@+id/return_game"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/font"
+            android:background="@drawable/button_background"
+            android:textColor="#f57f17"
+            android:text="@string/return_btn" />
+        <Button
+            android:id="@+id/setting_game"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/font"
+            android:background="@drawable/button_background"
+            android:textColor="#f57f17"
+            android:text="@string/setting" />
+        <Button
+            android:id="@+id/restart_game"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/font"
+            android:background="@drawable/button_background"
+            android:textColor="#f57f17"
+            android:text="@string/restart" />
+        <Button
+            android:id="@+id/next_game"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/font"
+            android:background="@drawable/button_background"
+            android:textColor="#f57f17"
+            android:text="@string/next" />
+        <Button
+            android:id="@+id/return_menu"
+            android:layout_width="300dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/font"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            android:textColor="#f57f17"
+            android:background="@drawable/button_background"
+            android:text="@string/return_menu"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/left_panel"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/left"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/left"
+            android:contentDescription="left" />
+
+        <ImageButton
+            android:id="@+id/right"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/right"
+            android:contentDescription="right"
+            android:padding="20dp" />
+
+        <ImageButton
+            android:id="@+id/up"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/up"
+            android:contentDescription="up" />
+
+        <ImageButton
+            android:id="@+id/down"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/down"
+            android:contentDescription="down" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/right_panel">
+
+        <Button
+            android:id="@+id/fight_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/fight"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

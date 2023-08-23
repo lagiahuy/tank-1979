@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Nhom2_l02_tank_game</string>
+    <string name="new_play">Chơi</string>
+    <string name="setting">Cài đặt</string>
+    <string name="high_score">Điểm cao</string>
+    <string name="exit">Thoát</string>
+    <string name="return_btn">Chơi tiếp</string>
+    <string name="return_menu">Quay lại menu</string>
+    <string name="sound">Âm thanh trong game</string>
+    <string name="back">Quay lại</string>
+    <string name="top_5">Top 5</string>
+    <string name="restart">Chơi lại</string>
+    <string name="game_over">Thua mất rồi</string>
+    <string name="next">Màn tiếp</string>
+    <string name="win">Thắng</string>
+    <string name="s">s</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/button_background.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/switch_custom_thumb_off.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/switch_custom_thumb_on.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/switch_custom_thumb_selector.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/switch_custom_track_off.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/switch_custom_track_on.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/switch_custom_track_selector.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/drawable/toogle_volume_selector.xml" value="0.3609375" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/layout/activity_option.xml" value="0.34479166666666666" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/layout/activity_score.xml" value="0.264" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/layout/activity_select_game.xml" value="0.34479166666666666" />
+        <entry key="..\:/1-Learn/Game/Project/nhom2_l02_tank_game/app/src/main/res/layout/ui_game.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
