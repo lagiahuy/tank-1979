@@ -28,6 +28,7 @@ import com.example.nhom2_l02_tank_game.util.StopWatch;
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Iterator;
+import java.util.Random;
 
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback{
@@ -82,9 +83,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     private ArrayList<Bullet> bulletList = new ArrayList<Bullet>();
     private Iterator<Bullet> bulletIterator;
     private int attackCooldown;
-    private int enemyRespawnX;
-    private int enemyRespawnY;
-
     private int playerRespawnX;
     private int playerRespawnY;
 
@@ -96,7 +94,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     private SharedPreferences sp;
     boolean soundGame;
 
-            StopWatch stopWatch = new StopWatch();
+    StopWatch stopWatch = new StopWatch();
 
     EnemyAI enemyAI;
 
@@ -325,9 +323,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 
     public boolean boundaryDetect(Bullet bullet) {
         if(bullet.getX() < playAreaLeft + bulletSize
-            || bullet.getX() > playAreaRight - bulletSize
-            || bullet.getY() < playAreaTop
-            || bullet.getY() > playAreaBottom) {
+                || bullet.getX() > playAreaRight - bulletSize
+                || bullet.getY() < playAreaTop
+                || bullet.getY() > playAreaBottom) {
             return true;
         } else {
             return false;
@@ -341,6 +339,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             attackCooldown =0;
 
         Tank player = tankList.get(0);
+        Tank enemy = tankList.get(1);
+
         if(player.getHitPoint() == 0) {
             if(player.getLife() == 0){
                 gameOver();
@@ -358,13 +358,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                 player.move();
         }
 
-        Tank enemy = tankList.get(1);
         if((int) (stopWatch.getElapsedTime()/1000) == 30){
             if(gamePlay==2){
                 db.insertScoreGame2(enemy.getNumKill());
                 win();
             }
         }
+
+
         if(enemy.getHitPoint() == 0) {
             if(enemy.getLife() == 0){
                 switch (gamePlay){
@@ -384,8 +385,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                     }else{
                         enemy.setHitPoint(enemyHitPoint);
                     }
-                    enemy.setX(enemyRespawnX);
-                    enemy.setY(enemyRespawnY);
+                    enemy.setX(getRandomNumber(screenWidth));
+                    enemy.setY(getRandomNumber(screenHeight));
                     enemyRespawnTime = 60;
                 }
             }
@@ -542,17 +543,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         attackCooldown = player.getAttackInterval();
         tankList.add(player);
 
-        enemyRespawnX = screenWidth / 2;
-        enemyRespawnY = screenHeight / 5;
-
-        Tank enemy = new Tank(enemyType, enemyRespawnX, enemyRespawnY, 2, ENEMY, playAreaBlockInPixel,enemyLife);
+        Tank enemy = new Tank(enemyType, getRandomNumber(screenWidth), getRandomNumber(screenHeight), 2, ENEMY, playAreaBlockInPixel,enemyLife);
         enemyAI = new EnemyAI(enemy, player, this, difficulty);
         tankList.add(enemy);
 
         enemyRespawnTime = 60;
         difficulty = 1;
     }
-
+    public static int getRandomNumber(int maxNumber) {
+        Random random = new Random();
+        return random.nextInt(maxNumber - 1) + 1;
+    }
     public void pause(){
         playing = false;
         stopWatch.pause();
@@ -596,8 +597,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         Tank enemy = tankList.get(1);
         enemy.setHitPoint(enemyHitPoint);
         enemy.setLife(enemyLife);
-        enemy.setX(enemyRespawnX);
-        enemy.setY(enemyRespawnY);
+        enemy.setX(getRandomNumber(screenWidth));
+        enemy.setY(getRandomNumber(screenHeight));
         enemy.setNumKill(0);
         loopThread = new LoopThread(this);
         loopThread.setRunning(true);

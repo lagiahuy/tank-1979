@@ -12,7 +12,6 @@ import java.util.Random;
 
 public class EnemyAI {
     //private int callCounter;
-
     Tank tank;
     Tank target;
     GameView gameView;
@@ -50,8 +49,8 @@ public class EnemyAI {
         //Log.d("EnemyAI", "target x, y : " + targetX + ", " + targetY);
         //Log.d("EnemyAI", "cur x, y : " + curX + ", " + curY);
 
-        int distanceX = curX - targetX; // If distanceX > 0, target is to our left
-        int distanceY = curY - targetY; // If distanceY > 0, target is above us
+        int distanceX = (int) customRound(curX - targetX); // If distanceX > 0, target is to our left
+        int distanceY = (int) customRound(curY - targetY); // If distanceY > 0, target is above us
 
         // check if it's aligned
         if (Math.abs(curX - targetX) <= bias) {
@@ -66,7 +65,12 @@ public class EnemyAI {
             yAligned = false;
         }
 
-        if (xAligned && !yAligned) {
+        if (xAligned && yAligned) {
+            if ((curY - targetY ) > 0)
+                tank.setDirection(0);
+            else
+                tank.setDirection(2);
+        } else if (xAligned) {
             if ((curY - targetY ) > 0)
                 tank.setDirection(0);
             else
@@ -106,6 +110,10 @@ public class EnemyAI {
                 tank.move();
         }
         //Log.d("EnemyAI", "align : " + xAligned + ", " + yAligned);
+    }
+
+    public static double customRound(double number) {
+        return (int) Math.round(number);
     }
 
     public void dodge(Bullet p) {
